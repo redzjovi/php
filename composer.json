@@ -1,0 +1,17 @@
+{
+    "name": "redzjovi/php",
+    "description": "PHP Collection",
+    "authors": [
+        {
+            "name": "Jovi",
+            "email": "redzjovi@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "redzjovi\\php\\": "src/"
+        }
+    }
+}
