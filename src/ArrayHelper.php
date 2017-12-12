@@ -65,7 +65,7 @@ class ArrayHelper
                 if (is_array($value)) {
                     $array[$key] = self::copyKeyName($value, $oldkey, $newkey);
                 } else {
-                    $array[$newkey] = $array[$oldkey];
+                    $array[$newkey] = isset($array[$oldkey]) ? $array[$oldkey] : '';
                 }
             }
         }
@@ -111,7 +111,7 @@ class ArrayHelper
         foreach ($elements as $element) {
             $tree_prefix = ($element['parent'] == 0) ? '' : $prefix;
             $branch[$element['id']] = $element;
-            $branch[$element['id']]['tree_name'] = $tree_prefix.$element['name'];
+            $branch[$element['id']]['tree_name'] = isset($element['name']) ? $tree_prefix.$element['name'] : '';
             $branch[$element['id']]['tree_prefix'] = $tree_prefix;
             if (isset($element['child'])) {
                 $branch = self::printTree($element['child'], $tree_prefix.$prefix, $element['parent'], $branch);
