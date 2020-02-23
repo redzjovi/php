@@ -4,6 +4,13 @@ namespace redzjovi\php;
 
 class ArrayHelper
 {
+    /**
+     * @param array $array
+     * @param array $permissions
+     * @param string $oldkey
+     * @param string $newkey
+     * @return void
+     */
     public static function addKeyVisible($array, $permissions = [], $oldkey = 'auth_item_name', $newkey = 'visible')
     {
         if (is_array($array)) {
@@ -25,6 +32,10 @@ class ArrayHelper
         return $array;
     }
 
+    /**
+     * @param array $array
+     * @return integer
+     */
     public static function arraySumRecursive(array $array) : int
     {
         foreach ($array as $value)
@@ -79,6 +90,11 @@ class ArrayHelper
         return $merged;
     }
 
+    /**
+     * @param array $elements
+     * @param integer $parent
+     * @return array
+     */
     public static function buildTree($elements = [], $parent = 0)
     {
         $branch = array();
@@ -96,6 +112,12 @@ class ArrayHelper
         return $branch;
     }
 
+    /**
+     * @param array $array
+     * @param string $oldkey
+     * @param string $newkey
+     * @return array
+     */
     public static function changeKeyName($array, $oldkey, $newkey)
     {
         if (is_array($array)) {
@@ -112,6 +134,12 @@ class ArrayHelper
         return $array;
     }
 
+    /**
+     * @param array $array
+     * @param string $oldkey
+     * @param string $newkey
+     * @return array
+     */
     public static function copyKeyName($array, $oldkey, $newkey)
     {
         if (is_array($array)) {
@@ -160,6 +188,13 @@ class ArrayHelper
         return $parents;
     }
 
+    /**
+     * @param array $elements
+     * @param string $prefix
+     * @param integer $parent
+     * @param array $branch
+     * @return array
+     */
     public static function printTree($elements, $prefix = '-', $parent = 0, $branch = [])
     {
         foreach ($elements as $element) {
